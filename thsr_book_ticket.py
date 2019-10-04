@@ -25,22 +25,26 @@ img_data = np.fromstring(img_data.content, np.uint8)
 img_data = cv2.imdecode(img_data, cv2.IMREAD_COLOR)
 # cv2.imwrite('test.jpg', img_data)
 
+'''
 cv2.imshow('test', img_data)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+'''
 
-# captcha_code=recognize_captcha(img_data)
-print('輸入驗證碼: ')
-captcha_code=input()
+#cv2.imwrite('D:/Desktop/test.jpg', img_data)
+from captcha import ocr
+captcha_code=ocr(img_data)
+#print('輸入驗證碼: ')
+#captcha_code=input()
 data={
       'selectStartStation': '2',
       'selectDestinationStation': '1',
       'trainCon:trainRadioGroup': '0',
       'seatCon:seatRadioGroup': 'radio17',
       'bookingMethod': '0',
-      'toTimeInputField': '2019/08/18',
+      'toTimeInputField': '2019/10/05',
       'toTimeTable': '1201A',
-      'backTimeInputField': '2019/08/18',
+      'backTimeInputField': '2019/10/05',
       'ticketPanel:rows:0:ticketAmount': '1F',
       'ticketPanel:rows:1:ticketAmount': '0H',
       'ticketPanel:rows:2:ticketAmount': '0W',
@@ -67,34 +71,3 @@ value=book_info_table.find_all(name='tr')[1]
 for th, td in zip(columns.findChildren(recursive=False), value.findChildren(recursive=False)):
     print(th.text, ':', td.text)
 
-
-
-
-
-
-
-
-
-#=== TEST TEST TEST ===#
-def recognize_captcha(mat):
-    mat=cv2.cvtColor(mat,cv2.COLOR_BGR2GRAY)
-    kernel = cv2.getStructuringElement(cv2.MORPH_RECT,(3, 3))
-    mat=cv2.dilate(mat, kernel)
-    kernel = cv2.getStructuringElement(cv2.MORPH_RECT,(3, 3))
-    mat=cv2.erode(mat, kernel)
-    ret1,mat = cv2.threshold(mat,1234, 255,cv2.THRESH_OTSU)
-    
-    # find noise line and reverse it to fix structure
-    minLineLength=100
-    lines = cv2.HoughLinesP(image=mat,rho=1,theta=np.pi/180, threshold=100,lines=np.array([]), minLineLength=minLineLength,maxLineGap=80)
-    a,b,c = lines.shape
-    for i in range(a):
-        tmp=mat.copy()
-        if lines[i][0][0] < lines[i][0][2] and lines[i][0][1] > lines[i][0][3]:
-            cv2.line(tmp, (lines[i][0][0], lines[i][0][1]), (lines[i][0][2], lines[i][0][3]), (0, 0, 255), 1, cv2.LINE_AA)
-            cv2.imshow('test', tmp)
-            cv2.waitKey(0)
-    cv2.destroyAllWindows()
-    # split characters
-    # recognize
-    return ''
