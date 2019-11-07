@@ -21,3 +21,6 @@ captcha code辨識率目前不高，約6成</br>
 ![image](https://github.com/yizZhang0421/thsr_robot/raw/master/readme_image/finish.jpg)</br>
 再做一些膨脹及腐蝕的操作就可以開始執行OCR</br>
 </br>
+
+
+![圖片參考名稱](https://raw.githubusercontent.com/adam-p/markdown-here/master/src/common/images/icon48.png "Logo")
