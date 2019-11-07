@@ -6,7 +6,9 @@ captcha code辨識率目前不高，約6成</br>
 </br>
 </br>
 <h3>作法</h3>
-![image](https://github.com/yizZhang0421/thsr_robot/raw/master/readme_image/origin.jpg)   </br>
+
+![image](https://github.com/yizZhang0421/thsr_robot/raw/master/readme_image/origin.jpg)
+
 上圖為原圖，經過觀察，高鐵訂票系統圖形驗證碼皆為數字及大寫英文的組合，並有一條隨機的曲線貫穿並破壞字元結構。</br>
 </br>
 ![image](https://github.com/yizZhang0421/thsr_robot/raw/master/readme_image/denoise.jpg)</br>
@@ -23,4 +25,4 @@ captcha code辨識率目前不高，約6成</br>
 </br>
 
 
-![image](https://github.com/yizZhang0421/thsr_robot/raw/master/readme_image/origin.jpg)
+
