@@ -23,4 +23,4 @@ captcha code辨識率目前不高，約6成</br>
 </br>
 
 
-![圖片參考名稱](https://raw.githubusercontent.com/adam-p/markdown-here/master/src/common/images/icon48.png "Logo")
+![圖片參考名稱](https://github.com/yizZhang0421/thsr_robot/raw/master/readme_image/origin.jpg "Logo")
